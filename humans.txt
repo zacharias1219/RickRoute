@@ -1,0 +1,14 @@
+# humanstxt.org
+# The people who built this site
+
+/* human */
+Richard Abishai
+  Site: https://rickroutes.onrender.com
+  Twitter: @rickoshade1891
+  Location: –
+
+/* site */
+  Last update: 2025-02-15
+  Language: English
+  Doctype: HTML5
+  IDE: Cursor

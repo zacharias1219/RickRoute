@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap (replace with your live domain)
+Sitemap: https://rickroutes.onrender.com/sitemap.xml
