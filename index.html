@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Abishai | Builder & Founder</title>
+    <meta name="description" content="Founder of Excelevate.ai. Building the future with AI agents and code.">
+    
+    <!-- Fonts: Inter (Premium sans-serif) with tight tracking support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        void: '#030304',
+                        card: '#0A0A0C',
+                        glass: 'rgba(255, 255, 255, 0.03)',
+                        border: 'rgba(255, 255, 255, 0.06)',
+                    },
+                    animation: {
+                        'blob': 'blob 20s infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030304;
+            color: #e2e8f0;
+            font-feature-settings: "cv11", "ss01";
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Subtle Engineering Grid Background */
+        .bg-grid {
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        /* Noise Texture for that analog feel */
+        .bg-noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Advanced Glassmorphism */
+        .glass-panel {
+            background: rgba(10, 10, 12, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.2), 0 8px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Card Hover Effects */
+        .hover-card-glow::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.5;
+            transition: opacity 0.5s;
+        }
+        .hover-card-glow:hover::before {
+            opacity: 1;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+    </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden selection:bg-indigo-500/30 selection:text-indigo-200">
+
+    <!-- Ambient Background Layer -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-void"></div>
+        <div class="absolute inset-0 bg-grid opacity-60"></div>
+        <div class="absolute inset-0 bg-noise mix-blend-overlay"></div>
+        
+        <!-- Dynamic Lighting Blobs -->
+        <div class="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-[120px] animate-blob"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] animate-blob" style="animation-delay: -5s"></div>
+        <div class="absolute top-[40%] left-[40%] w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] animate-blob" style="animation-delay: -10s"></div>
+    </div>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col gap-16">
+
+        <!-- Header Section -->
+        <header class="flex flex-col md:flex-row items-start md:items-end justify-between gap-8 animate-fade-in-up">
+            <div class="flex flex-col gap-6">
+                <!-- Avatar & Status -->
+                <div class="flex items-center gap-4">
+                    <div class="relative group cursor-default">
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-violet-500 to-indigo-500 rounded-full opacity-30 blur group-hover:opacity-75 transition duration-700"></div>
+                        <div class="relative w-24 h-24 overflow-hidden rounded-full border-2 border-void bg-void shadow-2xl">
+                            <img src="profile-photo.jpeg" alt="Richard Abishai" class="w-24 h-24 object-cover scale-[1.4]">
+                        </div>
+                        
+                        <!-- Status Indicator -->
+                        <div class="absolute bottom-1 right-1 w-6 h-6 bg-void rounded-full flex items-center justify-center border border-border" title="Accepting new clients">
+                            <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-white to-slate-400">
+                        Richard Abishai
+                    </h1>
+                    <p class="text-lg text-slate-400 font-light max-w-2xl leading-relaxed tracking-wide">
+                        Constructing intelligent systems. Founder of <span class="text-indigo-400 font-normal">Excelevate</span>. <br class="hidden md:block" />
+                        Blending engineering precision with creative AI solutions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Primary CTA -->
+            <div class="flex flex-wrap gap-3">
+                 <a href="https://topmate.io/richard_abishai" 
+                   target="_blank"
+                   class="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-white text-black rounded-full text-sm font-medium tracking-tight overflow-hidden transition-all hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]">
+                    <span class="relative z-10 flex items-center gap-2">
+                        Book a Consultation
+                        <iconify-icon icon="solar:calendar-add-linear" class="text-lg"></iconify-icon>
+                    </span>
+                </a>
+                <a href="https://richardabish.ai" target="_blank"
+                   class="group inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-white/5 border border-white/10 text-white rounded-full text-sm font-medium tracking-tight transition-all hover:bg-white/10 hover:border-white/20">
+                    <span>Portfolio</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- The Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 auto-rows-[minmax(160px,auto)] animate-fade-in-up" style="animation-delay: 0.1s">
+            
+            <!-- FEATURED 1: AGENCY (Excelevate) -->
+            <!-- Prominent placement for the business -->
+            <a href="https://excelevate.ai/" target="_blank" class="group col-span-1 md:col-span-1 lg:col-span-2 row-span-1 glass-panel hover-card-glow rounded-[2rem] p-8 flex flex-col justify-between relative overflow-hidden transition-all hover:-translate-y-1">
+                <!-- Decorative BG -->
+                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div class="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity transform group-hover:scale-110 duration-700">
+                     <iconify-icon icon="solar:rocket-2-linear" width="120" class="text-indigo-400 rotate-[-15deg]"></iconify-icon>
+                </div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-[10px] font-semibold text-indigo-300 uppercase tracking-wider">
+                            My Agency
+                        </span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-medium text-white tracking-tight mb-3 group-hover:text-indigo-200 transition-colors">Excelevate AI</h3>
+                    <p class="text-sm md:text-base text-slate-400 font-light leading-relaxed max-w-md">
+                        We help businesses scale operations using custom AI agents and automated workflows. The future of work, engineered today.
+                    </p>
+                </div>
+                
+                <div class="relative z-10 flex items-center gap-2 text-sm font-medium text-white mt-8 opacity-80 group-hover:opacity-100 transition-opacity">
+                    Visit Agency <iconify-icon icon="solar:arrow-right-up-linear" class="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></iconify-icon>
+                </div>
+            </a>
+
+            <!-- FEATURED 2: PERSONAL PORTFOLIO -->
+            <a href="https://github.com/zacharias1219" target="_blank" class="group col-span-1 md:col-span-1 lg:col-span-2 row-span-1 glass-panel hover-card-glow rounded-[2rem] p-8 flex flex-col justify-between relative overflow-hidden transition-all hover:-translate-y-1">
+                 <!-- Decorative BG -->
+                 <div class="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                 
+                <div class="relative z-10 flex flex-col h-full justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-500 shadow-lg shadow-black/20">
+                            <iconify-icon icon="solar:folder-with-files-linear" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-medium text-white tracking-tight mb-2">Projects</h3>
+                        <p class="text-sm text-slate-400 font-light leading-relaxed max-w-sm">
+                            My GitHub, experiments, and what I'm building.
+                        </p>
+                    </div>
+                    <div class="flex justify-end mt-4">
+                        <span class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all duration-300">
+                            <iconify-icon icon="solar:arrow-right-linear" width="20"></iconify-icon>
+                        </span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- SOCIALS (Stacked List) -->
+            <div class="col-span-1 lg:col-span-1 row-span-2 glass-panel rounded-[2rem] p-2 flex flex-col gap-2">
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/richard-abishai" target="_blank" class="group flex items-center gap-4 p-4 rounded-[1.5rem] hover:bg-white/5 transition-colors h-full">
+                    <div class="w-10 h-10 rounded-full bg-[#0077b5]/10 flex items-center justify-center text-[#0077b5] shrink-0">
+                        <iconify-icon icon="solar:users-group-rounded-linear" width="22"></iconify-icon>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="text-sm font-medium text-white truncate">LinkedIn</div>
+                        <div class="text-[11px] text-slate-500 font-light">Connect & Network</div>
+                    </div>
+                    <iconify-icon icon="solar:arrow-right-linear" class="text-slate-600 group-hover:text-white transition-colors"></iconify-icon>
+                </a>
+
+                <!-- Email (Personal + Work) -->
+                <div class="flex items-start gap-4 p-4 rounded-[1.5rem]">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                        <iconify-icon icon="solar:letter-linear" width="22"></iconify-icon>
+                    </div>
+                    <div class="flex-1 min-w-0 flex flex-col gap-1">
+                        <div class="text-sm font-medium text-white">Email</div>
+                        <div class="flex items-center gap-3 text-[11px] text-slate-500 font-light">
+                            <a href="mailto:richardabishai2112@gmail.com" class="hover:text-white transition-colors">Personal</a>
+                            <a href="mailto:richard@richardabish.ai" class="hover:text-white transition-colors">Work</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/richard_abishai" target="_blank" class="group flex items-center gap-4 p-4 rounded-[1.5rem] hover:bg-white/5 transition-colors h-full">
+                    <div class="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-400 shrink-0">
+                        <iconify-icon icon="solar:camera-linear" width="22"></iconify-icon>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="text-sm font-medium text-white truncate">Instagram</div>
+                        <div class="text-[11px] text-slate-500 font-light">Behind the scenes</div>
+                    </div>
+                    <iconify-icon icon="solar:arrow-right-linear" class="text-slate-600 group-hover:text-white transition-colors"></iconify-icon>
+                </a>
+            </div>
+
+            <!-- PODCAST (Tall Card) - center two columns on laptop -->
+            <div class="group col-span-1 lg:col-span-2 lg:col-start-2 row-span-2 glass-panel hover-card-glow rounded-[2rem] p-6 flex flex-col relative overflow-hidden hover:border-rose-500/30 transition-colors">
+                <div class="absolute inset-0 bg-gradient-to-b from-rose-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div class="flex items-center justify-between mb-8 relative z-10">
+                    <span class="w-10 h-10 rounded-full bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+                        <iconify-icon icon="solar:microphone-3-linear" width="20"></iconify-icon>
+                    </span>
+                    <!-- Live Indicator -->
+                    <div class="flex items-center gap-2 px-2 py-1 bg-black/40 rounded-full border border-white/5">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                        </span>
+                        <span class="text-[10px] font-medium text-slate-300 uppercase tracking-wide">On Air</span>
+                    </div>
+                </div>
+
+                <h3 class="text-lg font-medium text-white tracking-tight mb-2 relative z-10">The Podcast</h3>
+                <p class="text-xs text-slate-400 font-light mb-6 leading-relaxed relative z-10">
+                    Unfiltered conversations about AI, the creator economy, and the future of tech.
+                </p>
+
+                <div class="mt-auto relative z-10">
+                    <div class="w-full h-[152px] rounded-2xl overflow-hidden bg-black/40 border border-white/5 shadow-inner">
+                         <!-- Slightly taller Spotify embed for better UX -->
+                         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/5IYCmP5Gt9g1LTYSBvHDGM?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" loading="lazy" class="opacity-80 hover:opacity-100 transition-opacity"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WRITING -->
+            <a href="https://medium.com/@rickoshade1891" target="_blank" class="group col-span-1 glass-panel hover-card-glow rounded-[2rem] p-6 flex flex-col justify-between relative overflow-hidden transition-all">
+                <div class="absolute -right-6 -top-6 w-24 h-24 bg-blue-500/20 blur-[40px] rounded-full group-hover:bg-blue-500/30 transition-all"></div>
+                
+                <div class="flex items-start justify-between mb-4 relative z-10">
+                    <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 border border-blue-500/20">
+                        <iconify-icon icon="solar:pen-new-square-linear" width="20"></iconify-icon>
+                    </div>
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-slate-500 group-hover:text-blue-400 transition-colors"></iconify-icon>
+                </div>
+                
+                <div class="relative z-10">
+                    <h3 class="text-base font-medium text-white tracking-tight">Writing</h3>
+                    <p class="text-xs text-slate-400 font-light mt-1">Medium</p>
+                </div>
+            </a>
+
+            <!-- OPEN SOURCE -->
+            <a href="https://github.com/zacharias1219" target="_blank" class="group col-span-1 glass-panel hover-card-glow rounded-[2rem] p-6 flex flex-col justify-between relative overflow-hidden transition-all">
+                <div class="absolute -right-6 -top-6 w-24 h-24 bg-white/10 blur-[40px] rounded-full group-hover:bg-white/20 transition-all"></div>
+                
+                <div class="flex items-start justify-between mb-4 relative z-10">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white border border-white/10">
+                        <iconify-icon icon="solar:code-circle-linear" width="20"></iconify-icon>
+                    </div>
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="text-slate-500 group-hover:text-white transition-colors"></iconify-icon>
+                </div>
+                
+                <div class="relative z-10">
+                    <h3 class="text-base font-medium text-white tracking-tight">Open Source</h3>
+                    <p class="text-xs text-slate-400 font-light mt-1">Github & Experiments</p>
+                </div>
+            </a>
+
+        </section>
+
+        <!-- Footer -->
+        <footer class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4 border-t border-white/5 pt-10 pb-6 md:pb-0 animate-fade-in-up" style="animation-delay: 0.2s">
+            <div class="flex flex-col gap-1 text-center md:text-left">
+                <p class="text-xs text-slate-500 font-light">
+                    © 2024 Richard Abishai. All rights reserved.
+                </p>
+                <p class="text-[10px] text-slate-600 font-light uppercase tracking-widest">
+                    Designed in the Void
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://github.com/zacharias1219" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all">
+                    <iconify-icon icon="solar:code-square-linear" width="16"></iconify-icon>
+                </a>
+                <a href="https://linkedin.com/in/richard-abishai" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/10 transition-all">
+                    <iconify-icon icon="solar:users-group-rounded-linear" width="16"></iconify-icon>
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+</body>
+</html>
